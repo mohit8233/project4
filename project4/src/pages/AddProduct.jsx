@@ -10,6 +10,7 @@ const AddProduct = () => {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
+  const [rating, setRating] = useState("");
 
   // ✅ If ID present → Fetch existing product
   useEffect(() => {
@@ -20,6 +21,7 @@ const AddProduct = () => {
           setTitle(data.title);
           setPrice(data.price);
           setImage(data.image);
+          setRating(data.rating);
         });
     }
   }, [id]);
@@ -30,7 +32,8 @@ const AddProduct = () => {
     const productData = {
       title,
       price: Number(price),
-      image
+      image,
+      rating
     };
 
     if (id) {
@@ -98,6 +101,14 @@ const AddProduct = () => {
           required
         />
 
+         <input
+          type="text"
+          placeholder="Rating"
+          className="w-full border p-2 mb-4 rounded"
+          value={rating}
+          onChange={(e) => setImage(e.target.value)}
+          required
+        />
         <button
           type="submit"
           className="w-full bg-blue-600 py-2 rounded font-semibold"
