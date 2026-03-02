@@ -53,7 +53,7 @@ const AddProduct = () => {
       })
         .then(() => {
           alert("Product Added ✅");
-          navigate("/product");
+          navigate("/products");
         });
     }
   };

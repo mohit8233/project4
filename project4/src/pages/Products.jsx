@@ -38,7 +38,7 @@ const Products = () => {
 
   const handleDelete = (id) => {
     if (!user) {
-      alert("Please Login First 🔒");
+      alert("Please Login First");
       navigate("/login");
       return;
     }
@@ -87,7 +87,7 @@ const Products = () => {
                 <button
                   onClick={() => {
                     if (!user) {
-                      alert("Login Required 🔒");
+                      alert("Login Required ");
                       navigate("/login");
                       return;
                     }
